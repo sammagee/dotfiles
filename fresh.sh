@@ -41,13 +41,13 @@ mkdir $HOME/Code/web
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-rm -rf $HOME/.zprezto
-ln -s $HOME/.dotfiles/.zprezto $HOME/.zprezto
+ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+# Removes .vimrc and .vim from $HOME (if they exist) and symlinks these files from the .dotfiles
+rm -rf $HOME/.vim
+rm -rf $HOME/.vimrc
+ln -s $HOME/.dotfiles/.vim $HOME/.vim
+ln -s $HOME/.dotfiles/.vimrc $HOME/.vimrc
 
 # Symlink the Mackup config file to the home directory
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
