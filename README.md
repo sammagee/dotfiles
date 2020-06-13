@@ -3,7 +3,7 @@ These are my own set of dotfiles. Instructions for installation on a new system 
 
 ## A Fresh macOS Setup
 
-These instructions are for when you've already set up your dotfiles. If you want to get started with your own dotfiles you can [find instructions below](#your-own-dotfiles).
+These instructions are for when you've already set up your dotfiles.
 
 ### Before you re-install
 
