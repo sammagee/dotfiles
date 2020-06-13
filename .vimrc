@@ -1,6 +1,6 @@
 filetype indent on
 syntax on
-colorscheme Tomorrow-Night
+colorscheme custom
 set background=dark
 "set guifont=Menlo\ Regular:h18
 set number
