@@ -1,1 +1,13 @@
-/Users/sammagee/Library/Mobile Documents/com~apple~CloudDocs/Mackup/.aliases
+alias c=clear
+alias gaa="git add -A"
+alias gcm="git commit -m"
+alias gp="git push -u origin master"
+alias gs="git status"
+alias weather="curl wttr.in"
+alias art="php artisan"
+alias ocr="screencapture -i ~/tmp/screenshot.png && tesseract ~/tmp/screenshot.png stdout | pbcopy && rm -f ~/tmp/screenshot.png"
+alias rni="kill \$(lsof -t -i:8081); rm -rf ios/build/; react-native run-ios"
+alias emulator="cd /Users/sammagee/Library/Android/sdk/tools && emulator"
+alias nwatch="npm run watch"
+alias nprod="npm run prod"
+alias ndev="npm run dev"
