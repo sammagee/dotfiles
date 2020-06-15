@@ -30,6 +30,7 @@ set autowriteall
 set hlsearch
 set showmatch
 set noerrorbells visualbell t_vb=
+" highlight Comment cterm=italic
 
 nnoremap <leader>p :FilesMru --tiebreak=index<cr>
 map <C-p> :FilesMru --tiebreak=index<CR>

@@ -43,6 +43,10 @@ mkdir $HOME/Code/web
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# Removes .tmux.conf from $HOME (if it exists) and symlinks the .tmux.conf file from the .dotfiles
+rm -rf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
+
 # Removes .vimrc and .vim from $HOME (if they exist) and symlinks these files from the .dotfiles
 rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc

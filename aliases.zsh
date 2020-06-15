@@ -4,6 +4,7 @@ alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-dire
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias reloadshell="source $HOME/.zshrc"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias x="exit"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
@@ -26,7 +27,8 @@ alias nserve="npm run serve"
 alias nwatch="npm run watch"
 
 # Docker
-# alias docker-composer="docker-compose"
+alias dc="docker-compose"
+alias dcup="docker-compose up"
 # alias dstop="docker stop $(docker ps -a -q)"
 # alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
 # alias dpurgeimages="docker rmi $(docker images -q)"
