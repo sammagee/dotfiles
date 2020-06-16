@@ -1,56 +1,153 @@
-filetype indent on
-syntax on
-colorscheme custom
-set background=dark
-"set guifont=Menlo\ Regular:h18
-set number
+set nocompatible
+
+syntax enable
+set backspace=indent,eol,start
 let mapleader=","
-set laststatus=2
-set hidden
-set history=500
-set nowrap
-set nobackup
+set number
+set noerrorbells visualbell t_vb=
+set autowriteall
+set complete=.,w,b,u
 set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
-set backspace=2
-set encoding=utf-8
-set wildmenu
-set ignorecase
+set smartcase
+
+
+"----------Visuals----------"
+colorscheme custom
+set t_Co=256
+set lines=999
+
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+"We'll fake a custom left padding for each window.
+hi LineNr guibg=bg
+set foldcolumn=2
+hi foldcolumn guibg=bg
+
+"Get rid of ugly split borders.
+hi vertsplit guifg=bg guibg=bg
+
+
+"----------Search----------"
+set hlsearch
+set incsearch
+
+
+"----------Split Management----------"
 set splitbelow
 set splitright
-set expandtab
-set autoread
-set timeout ttimeout timeoutlen=200
-set smartindent
-set scrolloff=5
-set autoindent
-set autowriteall
-set hlsearch
-set showmatch
-set noerrorbells visualbell t_vb=
-" highlight Comment cterm=italic
 
-nnoremap <leader>p :FilesMru --tiebreak=index<cr>
-map <C-p> :FilesMru --tiebreak=index<CR>
+"Easier navigation between splits
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
 
-map <leader>s :source ~/.vimrc<CR>
-map <leader>ev :e ~/.vimrc<CR>
 
-autocmd BufWritePre * :%s/\s\+$//e
-"nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+"----------Mappings----------"
+nmap <Leader>ev :tabedit $HOME/.dotfiles/.vimrc<cr>
+nmap <Leader>es :e $HOME/.dotfiles/snippets/
 
-map <D-A-RIGHT> <C-w>l
-map <D-A-LEFT> <C-w>h
-map <D-A-DOWN> <C-w><C-w>
-map <D-A-UP> <C-w>W
+"Search highlight removal
+nmap <Leader><space> :nohlsearch<cr>
+
+"Quickly browse to any tag/symbol in the project
+"Tip: run ctags -R to regenerate the index
+nmap <Leader>f :tag<space>
+
+"Sort PHP use statements
+""http://stackoverflow.com/questions/11531073/how-do-you-sort-a-range-of-lines-by-length
+vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
+
+"-------------Plugins--------------"
+"
+""/
+"/ CtrlP
+""/
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = 'node_modules\DS_Store\|git'
+let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
+nmap <D-p> :CtrlP<cr>
+nmap <D-r> :CtrlPBufTag<cr>
+nmap <D-e> :CtrlPMRUFiles<cr>
+
+"/
+""/ NERDTree
+"/
+let NERDTreeHijackNetrw = 0
+let NERDTreeShowHidden = 1
+let NERDTreeIgnore = ['\.\.$', '\.$', '\~$']
+
+nmap <C-b> :NERDTreeToggle<cr>
+
+"/
+""/ Greplace.vim
+"/
+set grepprg=ag
+
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
+"/
+""/ vim-php-cs-fixer.vim
+"/
+let g:php_cs_fixer_level = "psr2"
+
+nnoremap <silent><leader>pf :call PhpCsFixerFixFile()<CR>
+
+"/
+""/ pdv
+"/
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+
+nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
+
+"/
+""/ Ultisnips
+"/
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+"-------------Laravel-Specific--------------"
+nmap <Leader>lr :e app/Http/routes.php<cr>
+nmap <Leader>lm :!php artisan make:
+nmap <Leader><Leader>c :e app/Http/Controllers/<cr>
+nmap <Leader><Leader>m :CtrlP<cr>app/
+nmap <Leader><Leader>v :e resources/views/<cr>
+
+"-------------Auto-Commands--------------"
+""Automatically source the Vimrc file on save.
+
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
+
+"-------------Functions--------------"
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>n <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>n :call PhpInsertUse()<CR>
+
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
 
 let g:lightline = {
 \ 'colorscheme': 'seoul256',
 \ }
-
-nnoremap <silent><leader>f :call PhpCsFixerFixFile()<CR>
 
 "This runs the full PHPUnit suite.
 nnoremap ,t :!phpunit<cr>
@@ -59,14 +156,11 @@ nnoremap ,t :!phpunit<cr>
 nmap ,tm ?function^Mwviwy:!phpunit --filter <c-r>"<CR>
 
 nmap <leader>e :MRU<CR>
-
 nmap <leader>w :bd<CR>
-
 nmap ;w :w<CR>
-
 nmap <C-]> g<C-]>
-
 imap jj <Esc>
+nmap / /\c
 
 "Syntastic recommended default settings.
 set statusline+=%#warningmsg#
@@ -84,21 +178,6 @@ let g:syntastic_php_checkers = ['php', 'phpmd']
 "these detections.
 let g:syntastic_quiet_messages = { "regex": 'Missing @return\|Missing parameter comment\|Missing class doc comment\|Missing file doc comment' }
 
-function! IPhpInsertUse()
-    call PhpInsertUse()
-    call feedkeys('a',  'n')
-endfunction
-autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
-autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
-
-
-function! IPhpExpandClass()
-    call PhpExpandClass()
-    call feedkeys('a', 'n')
-endfunction
-autocmd FileType php inoremap <Leader>q <Esc>:call IPhpExpandClass()<CR>
-autocmd FileType php noremap <Leader>q :call PhpExpandClass()<CR>
-
 let g:indent_guides_default_mapping = 0
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
@@ -108,16 +187,24 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'rking/ag.vim'
+Plug 'skwp/greplace.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'yegappan/mru'
 Plug 'vim-syntastic/syntastic'
 Plug 'arnaud-lb/vim-php-namespace'
-"Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tweekmonster/fzf-filemru'
+Plug 'preservim/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'garbas/vim-snipmate'
+Plug 'tobyS/vmustache'
+Plug 'tobyS/pdv'
+"Plug 'SirVer/ultisnips'
+Plug 'ervandew/supertab'
 
 "Snipmate dependencies
 Plug 'garbas/vim-snipmate'
