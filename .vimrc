@@ -115,6 +115,16 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+"/
+""/ vim-test
+"/
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+
 "-------------Laravel-Specific--------------"
 nmap <Leader>lr :e app/Http/routes.php<cr>
 nmap <Leader>lm :!php artisan make:
@@ -205,6 +215,7 @@ Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
 "Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
+Plug 'vim-test/vim-test'
 
 "Snipmate dependencies
 Plug 'garbas/vim-snipmate'
