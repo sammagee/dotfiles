@@ -10,6 +10,7 @@ alias x="exit"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Code"
+alias workspace="cd $HOME/workspace"
 
 # Laravel
 alias art="php artisan"
@@ -28,7 +29,13 @@ alias nwatch="npm run watch"
 
 # Docker
 alias dc="docker-compose"
-alias dcup="docker-compose up"
+alias dcup="SEED=true docker-compose up"
+alias dcdwn="dc down"
+alias dcs="dc stop"
+
+alias cmspredefined="docker-compose run cms python manage.py seed_predefined"
+alias formspredefined="docker-compose run forms python manage.py seed_predefined"
+
 # alias dstop="docker stop $(docker ps -a -q)"
 # alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
 # alias dpurgeimages="docker rmi $(docker images -q)"
@@ -41,7 +48,7 @@ alias commit="git add . && git commit -m"
 alias diff="git diff"
 alias force="git push --force"
 alias gb="git branch"
-alias gc="git checkout"
+alias gco="git checkout"
 alias gl="git log --oneline --decorate --color"
 alias gs="git status"
 alias nuke="git clean -df && git reset --hard"

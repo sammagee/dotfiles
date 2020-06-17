@@ -84,6 +84,7 @@ nmap <D-e> :CtrlPMRUFiles<cr>
 let NERDTreeHijackNetrw = 0
 let NERDTreeShowHidden = 1
 let NERDTreeIgnore = ['\.\.$', '\.$', '\~$']
+let NERDTreeMinimalUI = 1
 
 nmap <C-b> :NERDTreeToggle<cr>
 
@@ -123,6 +124,13 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+"/
+""/ NERDCommenter
+"/
+let g:NERDSpaceDelims = 1
+
+nmap <Leader>c <plug>NERDCommenterToggle
 
 
 "-------------Laravel-Specific--------------"
@@ -216,6 +224,7 @@ Plug 'tobyS/pdv'
 "Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'vim-test/vim-test'
+Plug 'preservim/nerdcommenter'
 
 "Snipmate dependencies
 Plug 'garbas/vim-snipmate'
