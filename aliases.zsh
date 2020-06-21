@@ -21,6 +21,7 @@ alias seed="php artisan db:seed"
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 
 # JS
+alias ni="npm install"
 alias ndev="npm run dev"
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias nprod="npm run prod"
