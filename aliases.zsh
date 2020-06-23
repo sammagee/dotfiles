@@ -62,6 +62,7 @@ alias unstage="git restore --staged ."
 alias wip="commit wip"
 
 # Misc.
+alias charm='open -a "PyCharm.app" --args "$@"' # Open PyCharm
 alias emulator="cd $HOME/Library/Android/sdk/tools && emulator" # Open Android Emulator
 alias rni="kill \$(lsof -t -i:8081); rm -rf ios/build/; react-native run-ios" # Refresh React Native for iOS
 alias weather="curl wttr.in" # Get current weather
