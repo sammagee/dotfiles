@@ -196,11 +196,6 @@ let g:syntastic_php_checkers = ['php', 'phpmd']
 "these detections.
 let g:syntastic_quiet_messages = { "regex": 'Missing @return\|Missing parameter comment\|Missing class doc comment\|Missing file doc comment' }
 
-let g:indent_guides_default_mapping = 0
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_exclude_filetypes = ['help', 'startify', 'man', 'rogue']
-
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
@@ -230,7 +225,6 @@ Plug 'preservim/nerdcommenter'
 Plug 'garbas/vim-snipmate'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 
