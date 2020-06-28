@@ -26,6 +26,7 @@ alias ndev="npm run dev"
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias nprod="npm run prod"
 alias nserve="npm run serve"
+alias ntest="npm test"
 alias nwatch="npm run watch"
 
 # Docker
