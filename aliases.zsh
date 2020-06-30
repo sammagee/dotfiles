@@ -46,6 +46,7 @@ alias formspredefined="docker-compose run forms python manage.py seed_predefined
 
 # Git
 alias amend="git add . && git commit --amend --no-edit"
+alias clone="git clone"
 alias commit="git add . && git commit -m"
 alias diff="git diff"
 alias force="git push --force"
