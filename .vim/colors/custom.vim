@@ -3,28 +3,20 @@
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 " Default GUI Colours
-let s:foreground = "eeffff"
-let s:background = "303030"
+let s:foreground = "c7c7c7"
+let s:background = "333333"
+let s:window = "333333"
+let s:line = "333333"
+let s:selection = "c1ddff"
 let s:editor = "6a6a6a"
-let s:selection = "191919"
-let s:line = "6a6a6a"
 let s:comment = "6a6a6a"
-let s:red = "ff5370"
-let s:orange = "f78c6c"
-let s:yellow = "ffcb6b"
-let s:green = "c3e88d"
-let s:aqua = "89ddff"
-let s:blue = "82aaff"
-let s:purple = "c792ea"
-let s:window = "303030"
-
-" Console 256 Colours
-if !has("gui_running")
-	let s:background = "303030"
-	let s:window = "303030"
-	let s:line = "6a6a6a"
-	let s:selection = "191919"
-end
+let s:red = "ff6d67"
+let s:orange = "ff7200"
+let s:yellow = "fefb67"
+let s:green = "5ff967"
+let s:aqua = "5ffdff"
+let s:blue = "6871ff"
+let s:purple = "ff76ff"
 
 hi clear
 syntax reset
@@ -495,3 +487,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 endif
 
 set background=dark
+highlight  Normal             guibg=NONE  ctermbg=NONE
+highlight  SignColumn         guibg=NONE  ctermbg=NONE
+highlight  DiffAdd            guibg=NONE  ctermbg=NONE
+highlight  DiffDelete         guibg=NONE  ctermbg=NONE
+highlight  DiffChange         guibg=NONE  ctermbg=NONE
+highlight  SignifyLineDelete  guibg=NONE  ctermbg=NONE
+highlight  SignifyLineChange  guibg=NONE  ctermbg=NONE

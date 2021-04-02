@@ -1,0 +1,41 @@
+add_newline = false
+
+format = """
+(bold green)$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$package\
+$env_var\
+$custom\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$character"""
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✖](bold red) "
+
+[directory]
+home_symbol = "⌂"
+read_only = " "
+style = "bold blue"
+truncation_symbol = "…/"
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[package]
+format = " [$symbol$version]($style) "
+symbol = " "

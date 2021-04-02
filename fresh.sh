@@ -47,6 +47,10 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
 
+# Removes starship.toml from $HOME/.config (if it exists) and symlinks the starship.toml file from the .dotfiles
+rm -rf $HOME/.config/starship.toml
+ln -s $HOME/.dotfiles/starship.toml $HOME/.config/starship.toml
+
 # Removes .vimrc and .vim from $HOME (if they exist) and symlinks these files from the .dotfiles
 rm -rf $HOME/.vim
 rm -rf $HOME/.vimrc

@@ -7,6 +7,12 @@ export PATH="$HOME/.node/bin:$PATH"
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"
 
+# Load flutter
+export PATH="$HOME/Code/app/flutter/bin:$PATH"
+
+# Load depot_tools for chromium
+export PATH="$HOME/Code/oss/depot_tools:$PATH"
+
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
