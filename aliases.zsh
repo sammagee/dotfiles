@@ -4,6 +4,7 @@ alias back="cd - > /dev/null"
 alias c=clear
 alias cls="c; ls"
 alias functions="vim $DOTFILES/functions.zsh"
+alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
 alias path="vim $DOTFILES/path.zsh"
 alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
