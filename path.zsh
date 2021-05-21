@@ -13,6 +13,9 @@ export PATH="$HOME/Code/app/flutter/bin:$PATH"
 # Load depot_tools for chromium
 export PATH="$HOME/Code/oss/depot_tools:$PATH"
 
+# Load sublime text cli
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
 # Make sure coreutils are loaded before system commands
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
