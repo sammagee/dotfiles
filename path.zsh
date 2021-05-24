@@ -1,3 +1,6 @@
+# Load dotfiles bin
+export PATH="$HOME/.dotfiles/bin:$PATH"
+
 # Load Composer tools
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 

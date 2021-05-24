@@ -122,4 +122,3 @@ fi
 plugins=(zsh-autosuggestions)
 
 eval "$(starship init zsh)"
-

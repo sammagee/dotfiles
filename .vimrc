@@ -141,12 +141,18 @@ nmap <Leader><Leader>m :CtrlP<cr>app/
 nmap <Leader><Leader>v :e resources/views/<cr>
 
 "-------------Auto-Commands--------------"
-""Automatically source the Vimrc file on save.
-
+"Automatically source the Vimrc file on save.
 augroup autosourcing
     autocmd!
     autocmd BufWritePost .vimrc source %
 augroup END
+
+"Automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+"Zoom a vim pane, ,= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
 "-------------Functions--------------"
 function! IPhpInsertUse()
@@ -220,6 +226,7 @@ Plug 'tobyS/pdv'
 Plug 'ervandew/supertab'
 Plug 'vim-test/vim-test'
 Plug 'preservim/nerdcommenter'
+Plug 'christoomey/vim-tmux-navigator'
 
 "Snipmate dependencies
 Plug 'garbas/vim-snipmate'
