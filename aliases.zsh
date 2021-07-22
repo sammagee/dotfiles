@@ -64,16 +64,16 @@ alias ys="yarn run start"
 alias ytest="yarn test"
 
 # Docker
-alias dc="docker-compose"
-alias dcexec="docker-compose exec -T"
-alias dcup="SEED=true docker-compose up"
+alias dc="docker compose"
+alias dcexec="docker compose exec -T"
+alias dcup="SEED=true docker compose up"
 alias dcdwn="dc down"
 alias dcs="dc stop"
 alias dprune="docker system prune"
 alias pyserve="PYTHONUNBUFFERED=1; DJANGO_SETTINGS_MODULE=project.settings.test; pip3 install --index-url https://nexus.imtins.com/repository/imtpypi/simple -r requirements/dev.txt -U; python3 manage.py migrate && python3 manage.py runserver"
 
-alias cmspredefined="docker-compose run cms python manage.py seed_predefined"
-alias formspredefined="docker-compose run forms python manage.py seed_predefined"
+alias cmspredefined="docker compose run cms python manage.py seed_predefined"
+alias formspredefined="docker compose run forms python manage.py seed_predefined"
 
 # alias dstop="docker stop $(docker ps -a -q)"
 # alias dpurgecontainers="dstop && docker rm $(docker ps -a -q)"
