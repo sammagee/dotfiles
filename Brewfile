@@ -22,6 +22,7 @@ brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/e0
 brew 'stripe'
+brew 'svn'
 brew 'tmux'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
@@ -65,6 +66,7 @@ cask 'google-chrome'
 cask 'gpg-suite'
 cask 'imageoptim'
 cask 'insomnia'
+cask 'iterm2'
 cask 'java'
 cask 'mysqlworkbench'
 cask 'phpstorm'
