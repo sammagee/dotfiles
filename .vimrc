@@ -110,13 +110,6 @@ let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <leader>d :call pdv#DocumentWithSnip()<CR>
 
 "/
-""/ Ultisnips
-"/
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-"/
 ""/ vim-test
 "/
 nmap <silent> t<C-n> :TestNearest<CR>
@@ -219,19 +212,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'tweekmonster/fzf-filemru'
 Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'garbas/vim-snipmate'
 Plug 'tobyS/vmustache'
 Plug 'tobyS/pdv'
-"Plug 'SirVer/ultisnips'
 Plug 'ervandew/supertab'
 Plug 'vim-test/vim-test'
 Plug 'preservim/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
-
-"Snipmate dependencies
-Plug 'garbas/vim-snipmate'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
 call plug#end()
 
 
