@@ -20,6 +20,7 @@ brew 'httpie'
 brew 'hub'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
+brew 'nvm'
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/e0
 brew 'starship'
 brew 'stripe'
