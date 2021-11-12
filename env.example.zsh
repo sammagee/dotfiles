@@ -1,0 +1,2 @@
+export DRONE_SERVER=
+export DRONE_TOKEN=

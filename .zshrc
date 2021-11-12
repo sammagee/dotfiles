@@ -110,15 +110,21 @@ export LANG=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# nvm
 export NVM_DIR="$([ -z"${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+# pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
 
+# autosuggestions
 plugins=(zsh-autosuggestions)
 
+# starship
 eval "$(starship init zsh)"

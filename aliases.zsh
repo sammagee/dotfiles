@@ -3,6 +3,7 @@ alias aliases="vim $DOTFILES/aliases.zsh"
 alias back="cd - > /dev/null"
 alias c=clear
 alias cls="c; ls"
+alias env="vim $DOTFILES/env.zsh"
 alias functions="vim $DOTFILES/functions.zsh"
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
 alias ll="/usr/local/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"

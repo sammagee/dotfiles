@@ -23,3 +23,6 @@ export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 # I've disabled this for now because I only use "ls" which is
 # referenced in my aliases.zsh file directly.
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# nvm-related fix for global installs
+export PATH="$(npm get prefix)/bin:$PATH"
