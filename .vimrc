@@ -3,7 +3,8 @@ set nocompatible
 syntax enable
 set backspace=indent,eol,start
 let mapleader=","
-set number
+set number relativenumber
+set nu rnu
 set noerrorbells visualbell t_vb=
 set autowriteall
 set complete=.,w,b,u
